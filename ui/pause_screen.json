@@ -19,62 +19,202 @@
     "size": [ 16, 16 ]
   },
 
-  "feed_button@pause.pause_button_template": {
-    "$pressed_button_name": "button.menu_feed",
-    "$focus_id": "button.menu_feed",
-    "$button_text": "pauseScreen.realmsStories",
-    "anchor_to": "top_left",
-    "anchor_from": "top_left"
+
+
+
+  
+  "drawer_open_toggle@common_toggles.light_template_toggle": {
+    "sound_name": "ui.drawer_open",
+    "sound_volume": 1.0,
+    "sound_pitch": 1.0
   },
 
-  "realms_stories_button_panel": {
-    "ignored": true
-  },
-
-  "feed_and_screenshot_buttons": {
-    "type": "stack_panel",
-    "anchor_from": "top_middle",
-    "anchor_to": "top_middle",
-    "orientation": "horizontal",
-    "size": [ "100%", 28 ],
-    "controls": [
-      {
-        "feed_button_panel": {
-          "type": "panel",
-          "size": [ "fill", "100%" ],
-          "controls": [
-            { "feed_button@pause.feed_button": {} },
-            { "unread_story_count_panel@pause.unread_story_count_panel": {} }
-          ]
-        }
-      },
-      {
-        "padding_1@pause.horizontal_padding": {
-          "ignored": "($is_holographic)"
-        }
-      },
-      {
-        "take_screenshot_button@common_buttons.light_content_button": {
-          "ignored": "($is_holographic)",
-          "$pressed_button_name": "button.screenshot",
-          "$button_tts_header": "key.screenshot",
-          "size": [ 28, "100%" ],
-          "$button_content": "pause.take_screenshot_icon"
-        }
-      }
-    ],
+  "friendsdrawer_button_panel": {
+    "type": "panel",
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "offset": [ -5, 5 ],
+    "size": [ "100%c", "100%c" ],
     "bindings": [
       {
-        "binding_name": "#is_realm_level",
-        "binding_name_override": "#visible",
-        "binding_type": "global"
+        "binding_type": "view",
+        "source_control_name": "quit_dialog",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#quit"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "note_screen",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#note"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not (#quit or #note))",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "players_button@gtb.swtich_toggle_c": {
+          "size": [ 50, 24 ],
+          "$toggle_name": "players",
+          "$toggle_view_binding_name": "players_toggle",
+          "$toggle_group_forced_index": 100,
+          "$button_content": "pause.players_button_content",
+          "$template_toggle": "pause.drawer_open_toggle"
+        }
       }
     ]
   },
 
-  "take_screenshot_button": {
-    "bindings": []
+  "players_button_content": {
+    "type": "stack_panel",
+    "size": [ "100%", 24 ],
+    "orientation": "horizontal",
+    "controls": [
+      {
+        "padding_01": {
+          "type": "panel",
+          "size": [ 1, 0 ]
+        }
+      },
+      {
+        "social_icon": {
+          "type": "image",
+          "layer": 2,
+          "size": [ 18, 24 ],
+          "texture": "textures/ui/social-icon"
+        }
+      },
+      {
+        "ctp": {
+          "type": "panel",
+          "size": [ "fill", 24 ],
+          "controls": [
+            {
+              "player_count_panel": {
+                "type": "panel",
+                "size": [ "100%", 10 ],
+                "clips_children": true,
+                "controls": [
+                  {
+                    "players_grid_count": {
+                      "type": "grid",
+                      "size": [ "100%", "default" ],
+                      "grid_item_template": "pause.players_button_player_count_label",
+                      "grid_dimension_binding": "#players_grid_dimension",
+                      "collection_name": "players_collection",
+                      "anchor_to": "bottom_left",
+                      "anchor_from": "bottom_left",
+                      "bindings": [
+                        {
+                          "binding_name": "#players_grid_dimension",
+                          "binding_condition": "always"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_02": {
+          "type": "panel",
+          "size": [ 1, 0 ]
+        }
+      }
+    ]
   },
+  "players_button_player_count_label": {
+    "type": "label",
+    "size": [ "100%", 10 ],
+    "text": "#text",
+    "text_alignment": "right",
+    "color": "$text_color",
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "players_collection"
+      },
+      {
+        "binding_type": "collection",
+        "binding_collection_name": "players_collection",
+        "binding_name": "#collection_index"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('(' + (#collection_index + 1) + ')')",
+        "target_property_name": "#text"
+      }
+    ]
+  },
+
+  "playerlist_panel": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/ui/White",
+    "color": [ 0, 0, 0 ],
+    "alpha": 0.7,
+    "layer": 900,
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "players_visible",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "stack": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "orientation": "horizontal",
+          "controls": [
+            {
+              "players_visible@common.toggle": {
+                "type": "toggle",
+                "size": [ "fill", "100%" ],
+                "focus_enabled": false,
+                "sound_name": "ui.drawer_close",
+                "sound_volume": 1.0,
+                "sound_pitch": 1.0,
+                "$toggle_name": "players",
+                "$radio_toggle_group": true,
+                "$toggle_group_forced_index": 0,
+                "$toggle_default_state": true,
+                "button_mappings": [
+                  {
+                    "from_button_id": "button.menu_select",
+                    "to_button_id": "button.menu_select",
+                    "mapping_type": "pressed"
+                  },
+                  {
+                    "from_button_id": "button.menu_ok",
+                    "to_button_id": "button.menu_ok",
+                    "mapping_type": "focused"
+                  },
+                  {
+                    "from_button_id": "button.menu_cancel",
+                    "to_button_id": "button.menu_select",
+                    "mapping_type": "global"
+                  }
+                ],
+                "controls": []
+              }
+            },
+            { "info_panel@pause.info_panel": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  // プレイヤーリスト
 
   "player_button@common_buttons.dark_content_button": {
     "size": [ "100%", "100%" ],
@@ -192,6 +332,7 @@
 
   "info_panel_background@pause.transparent_background": {
     "size": [ "100%", "100%" ],
+    "offset": [ 0, 0 ],
     "anchor_from": "top_right",
     "anchor_to": "top_right"
   },
@@ -200,6 +341,7 @@
     "size": [ 150, "100%" ],
     "anchor_from": "right_middle",
     "anchor_to": "right_middle",
+    "ignored": "$trial",
     "controls": [
       { "info_panel_background@pause.info_panel_background": {} },
       { "info_panel_list@pause.info_panel_content_list": {} }
@@ -276,8 +418,6 @@
     ]
   },
 
-
-  
   "player_count_label": {
     "type": "stack_panel",
     "orientation": "horizontal",
@@ -344,131 +484,33 @@
     ]
   },
 
-  "note_icon_button": {
-    "type": "panel",
-    "$button_tts_header": "gtb.memoScreen.title",
-    "controls": [
-      { "note_button_dialog@pause.note_button_dialog": {
-        "$focus_id": "note_button_focus"
-        }
+
+  "smaller_buttons_panel/stacked_column": {
+    "modifications": [
+      {
+        "control_name": "screenshot_padding",
+        "operation": "insert_after",
+        "value": [
+          {
+            "gote_note_btn": {
+              "type": "panel",
+              "size": [ "100%c + 4px", 32 ],
+              "controls": [
+                { "note_button_dialog@pause.note_button_dialog": {} }
+              ]
+            }
+          },
+          {
+            "gote_note_padding": {
+              "type": "panel",
+              "size": [ "2%", 0 ]
+            }
+          }
+        ]
       }
     ]
   },
 
-  "achievements_button@common_buttons.light_content_button": {
-    "size": [ 24, 24 ],
-    "$button_content": "pause.achievements_icon",
-    "$pressed_button_name": "button.menu_achievements"
-  },
-
-  "achievements_icon_button": {
-    "ignored": "$achievements_ignored",
-    "type": "panel",
-    "$button_tts_header": "menu.achievements",
-    "controls": [
-      {
-        "achievements_button@pause.achievements_button": {
-          "ignored": "$education_edition",
-          "variables": [
-            {
-              "requires": "$achievements_button_focus",
-              "$focus_id": "icon_panel_main_focus"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  
-  "the_icon_panel": {
-    "type": "stack_panel",
-    "anchor_to": "bottom_left",
-    "anchor_from": "bottom_left",
-    "size": [ "50% - 75px", "100%c" ],
-    "offset": [ 0, "-10%" ],
-    "controls": [
-      {
-        "stacked_column": {
-          "type": "stack_panel",
-          "size": [ "100%", 32 ],
-          "offset": [ "5%", 0 ],
-          "anchor_from": "top_left",
-          "anchor_to": "top_left",
-          "orientation": "horizontal",
-          "controls": [
-            {
-              "side_padding": {
-                "type": "panel",
-                "size": [ "12%", 0 ]
-              }
-            },
-            {
-              "feedback_btn@pause.column_frame": {
-                "ignored": "$education_edition",
-                "size": [ 28, 32 ],
-                "controls": [
-                  { "feedback_icon_button@pause.feedback_icon_button": {} }
-                ]
-              }
-            },
-            {
-              "feedback_padding": {
-                "type": "panel",
-                "size": [ "2%", 0 ]
-              }
-            },
-            {
-              "achievements_btn@pause.column_frame": {
-                "ignored": "$achievements_ignored",
-                "size": [ 28, 32 ],
-                "controls": [
-                  { "achievements_icon_button@pause.achievements_icon_button": {} }
-                ],
-                "bindings": []
-              }
-            },
-            {
-              "achievements_padding": {
-                "type": "panel",
-                "size": [ "2%", 0 ],
-                "bindings": []
-              }
-            },
-            {
-              "note_btn@pause.column_frame": {
-                "size": [ 28, 32 ],
-                "controls": [
-                  { "note_icon_button@pause.note_icon_button": {} }
-                ]
-              }
-            },
-            {
-              "note_padding": {
-                "type": "panel",
-                "size": [ "2%", 0 ]
-              }
-            },
-            {
-              "take_screenshot_btn@pause.column_frame": {
-                "ignored": "($is_holographic)",
-                "size": [ 28, 32 ],
-                "controls": [
-                  { "take_screenshot_button@pause.take_screenshot_button": {} }
-                ],
-                "bindings": [
-                  {
-                    "binding_name": "(not #is_realm_level)",
-                    "binding_name_override": "#visible",
-                    "binding_type": "global"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      }
-    ]
-  },
 
   "quit_dialoglabel@gtb.swtich_toggle_label": {
     "text": "deathScreen.quit.confirmToMainMenuWarning"
@@ -616,23 +658,6 @@
   "menu_background/button_panel": {
     "modifications": [
       {
-        "control_name": "return",
-        "operation": "insert_after",
-        "value": [
-          {
-            "feed_button@pause.feed_and_screenshot_buttons": {
-              "bindings": [
-                {
-                  "binding_name": "#is_realm_level",
-                  "binding_name_override": "#visible",
-                  "binding_type": "global"
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
         "control_name": "quit_button",
         "operation": "replace",
         "value": [
@@ -651,6 +676,28 @@
   },
 
   "pause_screen_main_panels": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "quit_dialog",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#quit"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "note_screen",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#note"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not (#quit or #note))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "skin_panel": {
     "bindings": [
       {
         "binding_type": "view",
@@ -736,7 +783,8 @@
                 }
               ]
             }
-          }
+          },
+          { "playerlist_panel@pause.playerlist_panel": {} }
         ]
       }
     ]

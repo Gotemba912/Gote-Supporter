@@ -1,14 +1,9 @@
 ﻿pack.name=Gote-Supporter v1.4.7
-pack.description=You can conveniently enjoy your Minecraft life.   Created by YuuhaLand
+pack.description=You can conveniently enjoy your Minecraft life.   Created by Yuka0813
 packname.nover=§l§aGote§d-§bSupporter
 
 
 map.position=Position §bX:%s§r, §aY:%s§r, §cZ:%s§r	#
-
-options.group.graphics.experimental=§e[Ex] §r
-selectWorld.worldTags.experimental=§e[Ex] §r
-selectWorld.worldTags=%2$s%1$s
-selectWorld.worldTags.hardcore= §c
 
 craftingScreen.tab.none=None
 
@@ -52,6 +47,7 @@ options.gote.show_hotbar_navigator=Show HUD hotbar navigator (touch)
 options.gote.chat_tab_button_type=Placement of the Tab key on the Chat Screen
 options.gote.playerlist_key=HUD player list key
 options.gote.play_screen_doubleclick=Make it so that you have to double click on the world button on the play screen to enter.
+options.gote.play_default_tab=Default tab when opening the play screen
 options.gote.start_screen_gamertag=Display your gamertag and icon on the start screen
 options.gote.chest_screen_paperdoll=Display your own dolls on chest screen, etc.
 options.gote.inventory_screen_statusbar=Display of HP, hunger level, etc. on inventory screen, etc.
@@ -63,7 +59,7 @@ options.languageInWorldWarning=Changing language while a world is open may cause
 
 settings.switchTouchWarn1=Changing these settings on the Switch may cause bugs or crashes.
 settings.switchTouchWarn2=You are responsible for changing these settings.
-settings.switchTouchWarn3=by YuuhaLand
+settings.switchTouchWarn3=by Yuka0813
 
 ## フィードバックサイト
 
@@ -140,7 +136,7 @@ packinfo.features.text17=https://x.gd/mv2bI
 packinfo.caution.title=Precautions
 packinfo.caution.text1=This pack is made in Japan.
 packinfo.caution.text2=For translation into English, we use DeepL and Google Translate.
-packinfo.caution.text3=YuuhaLand is not responsible for any problems caused by the use of this pack.
+packinfo.caution.text3=Yuka0813 is not responsible for any problems caused by the use of this pack.
 packinfo.caution.text4=I will not accept any support or contribution for this add-on.
 
 ## サウンド鑑賞
@@ -187,11 +183,23 @@ packinfo.faq.q9.a=As of June 2024, I am not accepting any requests to create add
 packinfo.update.title=Changelog
 packinfo.update.text1=On this page, you can see the changelog of Gote-Supporter.
 
+packinfo.v173.u1=Support for the new Pause screen in Minecraft v1.21.12x
+packinfo.v173.u2=The Gote-Supporter is now available in the old pause screen of the "Restore Classic" resource pack. (Temporary notes are currently unavailable.)
+packinfo.v173.u3=The social buttons on the new Pause screen have been replaced with a Player List button. You can quickly display the player list from the Player List button.
+packinfo.v173.u4=Fixed a bug where the F1 and F8 buttons overlapped when the view switch button was enabled.
+
+packinfo.v172.u1=Fixed a bug in Minecraft v1.21.11x where the Quick Settings and Sound Gallery did not appear.
+packinfo.v172.u2=The "Enable Coordinate UI Copy" option in Creator Settings is now available on Switch.
+
+packinfo.v171.u1=The button in the upper left corner of the title screen is back!
+packinfo.v171.u2=Right-clicking the "Play" button on the title screen will now open the play screen with the server tab open. This behavior can be changed in Config.
+packinfo.v171.u3=I changed the icon displayed on the title screen to the Xbox icon instead of the skin icon.
+
 packinfo.v170.u1=Updated pack icon.
 packinfo.v170.u2=The pack information screen has been updated.
 packinfo.v170.u3=Added "Lava Chicken" to Music Listen.
 packinfo.v170.u4=When "Show items that villagers plan to sell" in Config is set to false, information about unlocked items is no longer visible.
-packinfo.v170.u4=Fixed a bug where content logs were displayed on the trading screen.
+packinfo.v170.u5=Fixed a bug where content logs were displayed on the trading screen.
 
 packinfo.v1619.u1=A toggle has been added to Quick Settings to allow quick switching between graphic modes.
 packinfo.v1619.u2=Fixed a bug where the Render Distance setting did not appear in the Quick Settings when Vibrant Visuals was enabled.

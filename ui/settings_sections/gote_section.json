@@ -88,7 +88,7 @@
                       "layer": 1,
                       "size": [ "100%", "100%" ],
                       "text": "$text",
-                      "$text": "いつものマイクラ生活をちょっと便利に!\nby YuuhaLand",
+                      "$text": "いつものマイクラ生活をちょっと便利に!\nby Yuka0813",
                       "font_type": "smooth",
                       "offset": [ 1, 0 ],
                       
@@ -382,6 +382,15 @@
           "$option_binding_name": "#dummy",
           "$default_value": "$playerlist_key",
           "$text_box_name": "playerlist_key",
+          "enabled": false
+        }
+      },
+      {
+        "play_default_tab@settings_common.option_text_edit": {
+          "$option_label": "options.gote.play_default_tab",
+          "$option_binding_name": "#dummy",
+          "$default_value": "$play_default_tab",
+          "$text_box_name": "play_default_tab",
           "enabled": false
         }
       },

@@ -109,57 +109,6 @@
     "$buttontext": "Tab",
     "$is_up": false
   },
-  
-  "block_type_panel": {
-    "$options_dropdown_toggle_left_padding": [ 2, "100%"],
-    "$options_dropdown_toggle_prelabel_content": "command_block.block_icon",
-    "$options_dropdown_toggle_prelabel_content_size": [ 20, "100%" ]
-  },
-
-  "block_icon": {
-    "type": "panel",
-    "controls": [
-      {
-        "impulse": {
-          "type": "image",
-          "size": [ "100%", "100%" ],
-          "texture": "textures/blocks/command_block_front_mipmap",
-          "bindings": [
-            {
-              "binding_name": "#command_impulse_mode",
-              "binding_name_override": "#visible"
-            }
-          ]
-        }
-      },
-      {
-        "chain": {
-          "type": "image",
-          "size": [ "100%", "100%" ],
-          "texture": "textures/blocks/chain_command_block_front_mipmap",
-          "bindings": [
-            {
-              "binding_name": "#command_chain_mode",
-              "binding_name_override": "#visible"
-            }
-          ]
-        }
-      },
-      {
-        "repeating": {
-          "type": "image",
-          "size": [ "100%", "100%" ],
-          "texture": "textures/blocks/repeating_command_block_front_mipmap",
-          "bindings": [
-            {
-              "binding_name": "#command_repeat_mode",
-              "binding_name_override": "#visible"
-            }
-          ]
-        }
-      }
-    ]
-  },
 
   "coditional_button": {
     "type": "stack_panel",

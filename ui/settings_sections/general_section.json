@@ -118,6 +118,7 @@
   "quick_render_mode": {
     "type": "stack_panel",
     "size": [ "100%", "100%c" ],
+    "$option_enabled_binding_name": "#graphics_mode_dropdown_enabled",
     "bindings": [
       {
         "binding_name": "#graphics_mode_dropdown_enabled",
@@ -193,12 +194,16 @@
           },
           {
             "raytracing_render_distance_slider@settings_common.option_slider": {
-              "ignored": "($is_holographic)",
               "$option_label": "#raytracing_render_distance_slider_label",
               "$slider_name": "raytracing_render_distance",
               "$slider_value_binding_name": "#raytracing_render_distance",
               "$slider_tts_text_value": "#raytracing_render_distance_text_value",
               "$option_enabled_binding_name": "#raytracing_render_distance_enabled",
+              "$option_tooltip_binding_type": "global",
+              "$option_tooltip_area": "general_and_controls_sections",
+              "$option_tooltip_text_binding_name": "#rtx_renderdist_performance_tooltip_text",
+              "$option_tooltip_visible_binding_name": "#rtx_render_distance_warning_visible",
+              "$option_tooltip_icon": "textures/ui/WarningGlyph",
               "$slider_steps_binding_name": "#raytracing_render_distance_steps",
               "$label_bindings": [
                 {
@@ -206,7 +211,6 @@
                 }
               ],
               "controls": [
-                { "rtx_render_distance_warning@general_section.rtx_render_distance_warning": {} },
                 { "option_generic_core@settings_common.option_generic_core": {} }
               ],
               "bindings": [
@@ -218,8 +222,8 @@
             }
           },
           {
-            "deferred_render_distance_slider@settings_common.option_slider": {
-              "ignored": "($is_holographic or not $new_video_settings)",
+            "deferred_render_distance_slider@general_section.video_menu_customization_option_slider": {
+              "ignored": "(not $new_video_settings)",
               "$option_label": "#deferred_render_distance_slider_label",
               "$slider_name": "deferred_render_distance",
               "$slider_value_binding_name": "#deferred_render_distance",
@@ -243,8 +247,7 @@
             }
           },
           {
-            "render_distance_slider@settings_common.option_slider": {
-              "ignored": "($is_holographic)",
+            "render_distance_slider@general_section.video_menu_customization_option_slider": {
               "$option_label": "#render_distance_slider_label",
               "$slider_name": "render_distance",
               "$slider_value_binding_name": "#render_distance",
@@ -255,6 +258,10 @@
                 {
                   "binding_name": "$option_label"
                 }
+              ],
+              "controls": [
+                { "render_distance_warning@general_section.render_distance_warning": {} },
+                { "option_generic_core@settings_common.option_generic_core": {} }
               ],
               "bindings": [
                 {
@@ -406,10 +413,7 @@
   },
 
 
-  "account_section/device_id_label": {
-    "ignored": true
-  },
-  "account_section/MinecraftAccount_id_label": {
+  "account_section/account_info_buttom": {
     "ignored": true
   },
 
@@ -445,33 +449,17 @@
               ],
               "controls": [
                 {
-                  "device_id_label": {
+                  "account_info_label": {
                     "type": "label",
                     "size": [ "100%", "default" ],
                     "color": "$body_text_color",
                     "offset": [ 2, 0 ],
                     "anchor_from": "top_left",
                     "anchor_to": "top_left",
-                    "text": "#device_id",
+                    "text": "#account_info",
                     "bindings": [
                       {
-                        "binding_name": "#device_id"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "MinecraftAccount_id_label": {
-                    "type": "label",
-                    "color": "$body_text_color",
-                    "offset": [ 2, 0 ],
-                    "size": [ "100%", "default" ],
-                    "anchor_from": "top_left",
-                    "anchor_to": "top_left",
-                    "text": "#MinecraftAccount_id",
-                    "bindings": [
-                      {
-                        "binding_name": "#MinecraftAccount_id"
+                        "binding_name": "#account_info"
                       }
                     ]
                   }
@@ -613,6 +601,47 @@
     ]
   },
 
+  "creator_toggles_panel": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "copy_coordinate_section_stack_panel": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "controls": [
+            {
+              "content_log_section_label": {
+                "type": "label",
+                "text": "options.creatorTitle",
+                "color": "$body_text_color"
+              }
+            },
+            {
+              "padding_1": {
+                "type": "panel",
+                "size": [ 0, 7 ]
+              }
+            },
+            {
+              "option_content_file_log@settings_common.option_toggle": {
+                "$option_label": "options.copyCoordinateUI",
+                "$option_binding_name": "#copy_coordinate_ui",
+                "$toggle_name": "copy_coordinate_ui"
+              }
+            },
+            {
+              "padding_2": {
+                "type": "panel",
+                "size": [ 0, 7 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
   "language_section": {
     "modifications": [
       {

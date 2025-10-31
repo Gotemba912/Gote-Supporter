@@ -196,7 +196,7 @@
                 "anchor_from": "top_middle",
                 "anchor_to": "top_middle",
                 "size": [ 18, 18 ],
-                "offset": [ -36, 1 ],
+                "offset": [ -48, 1 ],
                 "controls": [
                   {
                     "f1_button_image@hud.f1_button_image": {}
@@ -211,7 +211,7 @@
                 "anchor_from": "top_middle",
                 "anchor_to": "top_middle",
                 "size": [ 18, 18 ],
-                "offset": [ 36, 1 ],
+                "offset": [ 48, 1 ],
                 "controls": [
                   {
                     "f8_button_image@hud.f8_button_image": {}

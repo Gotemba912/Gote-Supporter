@@ -1,0 +1,86 @@
+{
+  "namespace": "pause_v16",
+  
+  "menu_background/button_panel": {
+    "modifications": [
+      {
+        "control_name": "quit_button",
+        "operation": "replace",
+        "value": [
+          {
+            "quit_button@gtb.swtich_toggle": {
+              "size": [ "100%", 28 ],
+              "$toggle_name": "quit_dialog",
+              "$toggle_view_binding_name": "quit_dialog",
+              "$button_text": "pauseScreen.quit",
+              "$toggle_group_forced_index": 100
+            }
+          }
+        ]
+      }
+    ]
+  },
+  
+  "pause_screen_main_panels": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "quit_dialog",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#quit"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "note_screen",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#note"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not (#quit or #note))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "pause_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "quit_dialog_screen": {
+              "type": "panel",
+              "size": [ "100%", "100%" ],
+              "ignored": "$education_edition",
+              "visible": false,
+              "controls": [
+                {
+                  "quit_esc_close@gtb.close_swtich_toggle_esc": {
+                    "layer": 502,
+                    "size": [ "100%", "100%" ],
+                    "$toggle_name": "quit_dialog",
+                    "$toggle_default_state": true,
+                    "$toggle_group_forced_index": 0
+                  }
+                },
+                {
+                  "dialog2@pause.dialog2": {}
+                }
+              ],
+              "bindings": [
+                {
+                  "binding_type": "view",
+                  "source_control_name": "quit_dialog",
+                  "source_property_name": "#toggle_state",
+                  "target_property_name": "#visible"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

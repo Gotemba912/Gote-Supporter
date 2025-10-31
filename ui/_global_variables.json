@@ -10,7 +10,7 @@ Gote-Supporter Config
 項目を誤って設定してしまうと、Gote-Supporterが正常に機能しなくなる可能性があります!
 
 各設定項目については↓をご覧ください!!
-https://github.com/YuuhaLand/Gote-Supporter/wiki/Config(Japanese)
+https://github.com/GotembaYuka/Gote-Supporter/wiki/Config(Japanese)
 
 ★★★
 
@@ -21,7 +21,7 @@ Each setting has a written description, so please read it and set it.
 To apply the settings, please relog the world you are in or restart Minecraft.
 
 If an item is incorrectly set, Gote-Supporter may not function properly!
-https://github.com/YuuhaLand/Gote-Supporter/wiki/Config(English)
+https://github.com/GotembaYuka/Gote-Supporter/wiki/Config(English)
 *********************************************/
 
 
@@ -35,6 +35,7 @@ https://github.com/YuuhaLand/Gote-Supporter/wiki/Config(English)
   "$show_gote_version|default": true,
   "$show_build_number|default": false,
   "$play_screen_doubleclick|default": false,
+  "$play_default_tab|default": "worlds",
   "$show_recoverycompass|default": false,
   "$show_locked_trade_items|default": true,
   "$enable_force_trade|default": false,
@@ -49,7 +50,7 @@ https://github.com/YuuhaLand/Gote-Supporter/wiki/Config(English)
   
   //これらの設定は変更しないようお願いします!!
   //Please do not change these settings!
-  "$gote_ver": "1.7.0",
+  "$gote_ver": "1.7.3",
   "$gote_supporter_enabled": true,
   "$is_goteserver|default": false, 
   "$revival_for_2023|default": false,
