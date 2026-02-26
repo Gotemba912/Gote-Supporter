@@ -2,6 +2,7 @@
   "namespace": "play",
   
   "third_party_server_info_panel/server_info_stack_panel/view_offers_button": {
+    "$button_text": "gui.store",
     "bindings": []
   },
   

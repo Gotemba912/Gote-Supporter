@@ -1,5 +1,5 @@
 ﻿pack.name=Gote-Supporter v1.4.7
-pack.description=You can conveniently enjoy your Minecraft life.   Created by Yuka0813
+pack.description=You can conveniently enjoy your Minecraft life.   Created by Yuka0745
 packname.nover=§l§aGote§d-§bSupporter
 
 
@@ -59,15 +59,23 @@ options.languageInWorldWarning=Changing language while a world is open may cause
 
 settings.switchTouchWarn1=Changing these settings on the Switch may cause bugs or crashes.
 settings.switchTouchWarn2=You are responsible for changing these settings.
-settings.switchTouchWarn3=by Yuka0813
+settings.switchTouchWarn3=by Yuka0745
 
 ## フィードバックサイト
 
 gtb.gts.gotofeedback=Open Feedback site? Your browser will launch.
 gtb.pocket.waring=Some Gote-Supporter features are not supported by Pocket UI.
-gtb.worldFolderPath.worldFolder=World Folder Location
+
+gtb.lastOpenedVersion=Last opened version
+
+gtb.baseGameVersion1=The base game version for the world is set to 
+gtb.baseGameVersion2=!
+
+gtb.worldFolderPath.worldFolder=World path
 gtb.worldFolderPath.cantget=Could not be obtained.
 gtb.worldFolderPath.cantget.tooltip=The folder location cannot be retrieved because there are no thumbnails for the world. Once the world is loaded, the folder location can be retrieved.
+
+gtb.enablePurchaceButton=Enable purchace button
 
 gtb.previewWarning.title=Warning
 gtb.previewWarning.honbun1=Applying Gote-Supporter in Minecraft Preview may cause crashes and UI collapse.
@@ -103,7 +111,7 @@ packinfo.about.text2=This resource pack is a UI add-on that adds a bit of extra 
 packinfo.about.text3=It does not use any behavior packs and can be used on all but a few servers and multiplayer!
 packinfo.about.text4=On this screen you can learn more about Gote-Supporter!
 packinfo.about.text5=This pack is presented in the following pages!
-packinfo.about.text6=ゆうはのブログ (Japanese)
+packinfo.about.text6=優香のメモ帳 (Japanese)
 packinfo.about.text7=Crafters Colony (Japanese)
 packinfo.about.text8=Github (Japanese)
 packinfo.about.text9=MCPEDL (English)
@@ -136,7 +144,7 @@ packinfo.features.text17=https://x.gd/mv2bI
 packinfo.caution.title=Precautions
 packinfo.caution.text1=This pack is made in Japan.
 packinfo.caution.text2=For translation into English, we use DeepL and Google Translate.
-packinfo.caution.text3=Yuka0813 is not responsible for any problems caused by the use of this pack.
+packinfo.caution.text3=Yuka0745 is not responsible for any problems caused by the use of this pack.
 packinfo.caution.text4=I will not accept any support or contribution for this add-on.
 
 ## サウンド鑑賞
@@ -182,6 +190,14 @@ packinfo.faq.q9.a=As of June 2024, I am not accepting any requests to create add
 
 packinfo.update.title=Changelog
 packinfo.update.text1=On this page, you can see the changelog of Gote-Supporter.
+
+packinfo.v174.u1=The Minecraft version format on the title screen has been changed to "v1.XX.X".
+packinfo.v174.u2=To prevent accidental purchases on the marketplace, we've enabled a requirement to turn the activation toggle ON before making a purchase.
+packinfo.v174.u3=Improvements to the renaming field in the anvil screen.
+packinfo.v174.u4=In the old world editing screen, we added a base game version label to worlds where a base game version is set. (ForceCloseOreUI is required.)
+packinfo.v174.u5=You can now display the player list on the pause screen using the Tab key.
+packinfo.v174.u6=We fixed the issue with the player list button on the pause screen.
+packinfo.v174.u7=Removed extra white space from the settings screen.
 
 packinfo.v173.u1=Support for the new Pause screen in Minecraft v1.21.12x
 packinfo.v173.u2=The Gote-Supporter is now available in the old pause screen of the "Restore Classic" resource pack. (Temporary notes are currently unavailable.)

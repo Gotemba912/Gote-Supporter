@@ -473,7 +473,7 @@
           "anchor_to": "top_left",
           "size": [ "default", 10 ],
           "offset": [ 0, -12 ],
-          "text": "Gote-Supporter by ©Yuka0813",
+          "text": "Gote-Supporter by ©Yuka0745",
           "layer": 1,
           "controls": [
             {
@@ -545,6 +545,11 @@
               "binding_name": "#development_version"
             },
             {
+              "binding_type": "view",
+              "source_property_name": "('v1.' + (('§z' + #version) - 'v'))",
+              "target_property_name": "#fixed_version"
+            },
+            {
               "ignored": "(not $pre_release)",
               "binding_type": "view",
               "source_property_name": "(#mc_name + ' Preview')",
@@ -553,13 +558,13 @@
             {
               "ignored": "$show_build_number",
               "binding_type": "view",
-              "source_property_name": "(#mc_name_display + ' ' + #version)",
+              "source_property_name": "(#mc_name_display + ' ' + #fixed_version)",
               "target_property_name": "#text"
             },
             {
               "ignored": "(not $show_build_number)",
               "binding_type": "view",
-              "source_property_name": "(#mc_name_display + ' ' + #version + ' (' + #development_version + ')')",
+              "source_property_name": "(#mc_name_display + ' ' + #fixed_version + ' (' + #development_version + ')')",
               "target_property_name": "#text"
             }
           ],

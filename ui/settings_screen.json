@@ -1,4 +1,10 @@
 {
+  "namespace": "settings",
+  
+  "selector_stack_panel/controls_and_settings_selector_pane": {
+    "$spatialPatternsPadding": [ 0, 0 ]
+  },
+  
   "toggle@common_toggles.light_text_toggle": {
     "$checked_control": "common_toggles.toggle_unchecked",
     "$checked_hover_control": "common_toggles.toggle_unchecked_hover",
@@ -94,6 +100,7 @@
 
 
   "selector_stack_panel": {
+    "$spatialPatternsPadding": [ 0, 0 ],
     "modifications": [
       {
         "control_name": "spacer_0",

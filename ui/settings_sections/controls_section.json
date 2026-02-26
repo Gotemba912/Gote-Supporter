@@ -2,6 +2,10 @@
 {
   "namespace": "controls_section",
 
+  "keymapping_grid": {
+    "grid_item_template": "controls_section.keymapping_item_frame"
+  },
+  
   "touch_section": {
     "modifications": [
       {

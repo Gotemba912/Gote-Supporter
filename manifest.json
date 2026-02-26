@@ -1,10 +1,10 @@
 {
   "format_version": 2,
   "header": {
-    "description": "いつものマイクラ生活をちょっと便利に!\nby Yuka0813",
-    "name": "Gote-Supporter v1.7.3",
+    "description": "いつものマイクラ生活をちょっと便利に!\nby Yuka0745",
+    "name": "Gote-Supporter v1.7.4",
     "uuid": "3f6ab53c-3e23-4f01-a8a6-0d9dcca5f205",
-    "version": [ 1, 7, 3 ],
+    "version": [ 1, 7, 4 ],
     "min_engine_version": [ 1, 13, 0 ]
   },
   "modules": [
@@ -12,7 +12,7 @@
       "description": "作り始めたきっかけ: https://youtu.be/hynOlwA0tIw",
       "type": "resources",
       "uuid": "bc5dca4a-6176-438c-aca8-67c0dfd578fa",
-      "version": [ 1, 7, 3 ]
+      "version": [ 1, 7, 4 ]
     }
   ],
   "metadata": {

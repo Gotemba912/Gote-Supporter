@@ -1,0 +1,37 @@
+{
+  "namespace": "pdp",
+
+  "purchace_enable_toggle@settings_common.option_toggle_control": {
+    "$toggle_state_binding_name": "#dummy",
+    "$option_binding_name": "#dummy",
+    "$toggle_name": "purchace_enable_toggle"
+  },
+
+  "summary_text_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "purchace_enable@settings_common.option_toggle": {
+              "$option_label": "gtb.enablePurchaceButton",
+              "$control_name": "pdp.purchace_enable_toggle"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "summary_box_button_panel": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "pdp.purchace_enable_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#enabled"
+      }
+    ]
+  }
+}

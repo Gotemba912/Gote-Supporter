@@ -246,7 +246,7 @@
       { "howtoplay_12@gote_info_sections.link_text": {"$text": "https://minecraft-mcworld.com/74563/"}},
       { "howtoplay_13@gote_info_sections.text": {"$text": ""}},
       { "howtoplay_14@gtb.features_text_with_bubble": {"$text": "packinfo.about.text8"}},
-      { "howtoplay_15@gote_info_sections.link_text": {"$text": "https://github.com/GotembaYuka/Gote-Supporter/"}},
+      { "howtoplay_15@gote_info_sections.link_text": {"$text": "https://github.com/Gotemba912/Gote-Supporter/"}},
       { "howtoplay_16@gote_info_sections.text": {"$text": ""}},
       { "howtoplay_17@gtb.features_text_with_bubble": {"$text": "packinfo.about.text9"}},
       { "howtoplay_18@gote_info_sections.link_text": {"$text": "https://mcpedl.com/gote-supporter"}},
@@ -398,16 +398,16 @@
     "controls": [
       { "header@gote_info_sections.header": {} },
       {
-        "yuka0813_icon_panel": {
+        "Yuka0745_icon_panel": {
           "type": "stack_panel",
           "orientation": "horizontal",
           "size": [ "100%", 70 ],
           "offset": [ 0, 0 ],
           "controls": [
             {
-              "yuka0813_icon": {
+              "yuka0745_icon": {
                 "type": "image",
-                "texture": "textures/ui/yuka0813",
+                "texture": "textures/ui/yuka0745",
                 "size": [ 60, 60 ],
                 "anchor_from": "top_left",
                 "anchor_to": "top_left"
@@ -427,7 +427,7 @@
                   {
                     "by_yuka0745": {
                       "type": "label",
-                      "text": "§l§dYuka0813",
+                      "text": "§l§dYuka0745",
                       "font_scale_factor": 1.50,
                       "offset": [ 0, 0 ],
                       "shadow": true
@@ -479,7 +479,7 @@
                         {
                           "link": {
                             "type": "label",
-                            "text": " §eyoutube.com/@GotembaYuka",
+                            "text": " §eyoutube.com/@Yuka0745",
                             "shadow": true,
                             "font_type": "smooth"
                           }

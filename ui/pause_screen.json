@@ -26,7 +26,24 @@
   "drawer_open_toggle@common_toggles.light_template_toggle": {
     "sound_name": "ui.drawer_open",
     "sound_volume": 1.0,
-    "sound_pitch": 1.0
+    "sound_pitch": 1.0,
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.menu_select",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.menu_ok",
+        "mapping_type": "focused"
+      },
+      {
+        "from_button_id": "button.menu_autocomplete",
+        "to_button_id": "button.menu_select",
+        "mapping_type": "global"
+      }
+    ]
   },
 
   "friendsdrawer_button_panel": {
@@ -76,15 +93,24 @@
       {
         "padding_01": {
           "type": "panel",
-          "size": [ 1, 0 ]
+          "size": [ 3, 0 ]
         }
       },
       {
-        "social_icon": {
-          "type": "image",
-          "layer": 2,
-          "size": [ 18, 24 ],
-          "texture": "textures/ui/social-icon"
+        "social_icon_panel": {
+          "type": "panel",
+          "size": [ 12, "100%" ],
+          "controls": [
+            {
+              "social_icon": {
+                "type": "image",
+                "layer": 2,
+                "size": [ 12, 12 ],
+                "color": "$text_color",
+                "texture": "textures/ui/social"
+              }
+            }
+          ]
         }
       },
       {
@@ -200,6 +226,11 @@
                   },
                   {
                     "from_button_id": "button.menu_cancel",
+                    "to_button_id": "button.menu_select",
+                    "mapping_type": "global"
+                  },
+                  {
+                    "from_button_id": "button.menu_autocomplete",
                     "to_button_id": "button.menu_select",
                     "mapping_type": "global"
                   }

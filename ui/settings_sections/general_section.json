@@ -1,5 +1,13 @@
 {
   "namespace": "general_section",
+  
+  "gamertag_controls": {
+    "$spatialPatternsPadding": [ 0, 0 ]
+  },
+  
+  "advanced_graphics_options_section": {
+    "$spatialPatternsPadding": [ 0, 0 ]
+  },
 
   "playsound_play": {
     "type": "image",
@@ -360,6 +368,7 @@
   },
 
   "general_tab_section": {
+    "$spatialPatternsPadding": [ 0, 0 ],
     "modifications": [
       {
         "control_name": "only_allow_trusted_skins_toggle",
@@ -424,6 +433,7 @@
   },
 
   "account_section": {
+    "$spatialPatternsPadding": [ 0, 0 ],
     "modifications": [
       {
         "array_name": "controls",
@@ -494,6 +504,7 @@
   },
 
   "video_section": {
+    "$spatialPatternsPadding": [ 0, 0 ],
     "modifications": [
       {
         "control_name": "perspective_dropdown",

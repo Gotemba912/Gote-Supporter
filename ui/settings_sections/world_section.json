@@ -26,47 +26,64 @@
             "world_metadata": {
               "type": "stack_panel",
               "size": [ "100%", "100%c + 10px" ],
+              "ignored": "$is_world_create",
               "controls": [
                 {
-                  "game_version_label": {
-                    "type": "stack_panel",
-                    "orientation": "horizontal",
-                    "size": [ "100%", 10 ],
-                    "controls": [
+                  "last_opened_version": {
+                    "type": "label",
+                    "text": "#text",
+                    "color": "$body_text_color",
+                    "ignored": "(not $is_pregame)",
+                    "bindings": [
                       {
-                        "version": {
-                          "type": "label",
-                          "text": "#text",
-                          "color": "$body_text_color",
-                          "bindings": [
-                            {
-                              "binding_name": "#minimum_template_version"
-                            },
-                            {
-                              "binding_type": "view",
-                              "source_property_name": "('%storageManager.version: v' + #minimum_template_version)",
-                              "target_property_name": "#text"
-                            }
-                          ]
-                        }
+                        "binding_name": "#minimum_template_version"
+                      },
+                      {
+                        "binding_type": "view",
+                        "source_property_name": "('%gtb.lastOpenedVersion: v' + #minimum_template_version)",
+                        "target_property_name": "#text"
                       }
                     ]
                   }
                 },
                 {
-                  "world_folder_label": {
-                    "type": "stack_panel",
-                    "orientation": "horizontal",
-                    "size": [ "100%", 10 ],
-                    "controls": [
+                  "world_base_game_version_label": {
+                    "type": "label",
+                    "text": "#text",
+                    "color": "$body_text_color",
+                    "bindings": [
                       {
-                        "text": {
-                          "type": "label",
-                          "text": "gtb.worldFolderPath.worldFolder",
-                          "color": "$body_text_color"
-                        }
+                        "binding_name": "#base_game_version_debug_text"
+                      },
+                      {
+                        "binding_type": "view",
+                        "source_property_name": "(('§z' + #base_game_version_debug_text) - 'Base Game Version: ')",
+                        "target_property_name": "#base_game_version"
+                      },
+                      {
+                        "binding_type": "view",
+                        "source_property_name": "('§g%gtb.baseGameVersion1 v' + #base_game_version + ' %gtb.baseGameVersion2')",
+                        "target_property_name": "#text"
+                      },
+                      {
+                        "binding_type": "view",
+                        "source_property_name": "(not (#base_game_version_debug_text = 'Base Game Version: *'))",
+                        "target_property_name": "#visible"
                       }
                     ]
+                  }
+                },
+                {
+                  "padding_01": {
+                    "type": "panel",
+                    "size": [ 0, 5 ]
+                  }
+                },
+                {
+                  "folder_label": {
+                    "type": "label",
+                    "text": "gtb.worldFolderPath.worldFolder",
+                    "color": "$body_text_color"
                   }
                 },
                 {
@@ -172,16 +189,6 @@
                       }
                     ]
                   }
-                }
-              ],
-              "bindings": [
-                {
-                  "binding_name": "#minimum_template_version"
-                },
-                {
-                  "binding_type": "view",
-                  "source_property_name": "(not (#minimum_template_version = '0.0.0.0'))",
-                  "target_property_name": "#visible"
                 }
               ]
             }
