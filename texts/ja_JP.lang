@@ -152,7 +152,32 @@ gtb.playercount.text1=オンラインのプレイヤー:
 gtb.playercount.text2=人
 gtb.playercount.text2.one=人
 
-
+gtb.contentLogHistory.filter1=ただいま
+gtb.contentLogHistory.filter2=のログを表示中
+gtb.contentLogHistory.noFilter=フィルターなし
+gtb.contentLogHistory.blocks=ブロック
+gtb.contentLogHistory.item=アイテム
+gtb.contentLogHistory.commands=コマンド
+gtb.contentLogHistory.recipes=レシピ
+gtb.contentLogHistory.entity=エンティティ
+gtb.contentLogHistory.ai=AI
+gtb.contentLogHistory.actor=アクター
+gtb.contentLogHistory.molang=Molang
+gtb.contentLogHistory.effects=パーティクル
+gtb.contentLogHistory.biomeRegistry=バイオーム
+gtb.contentLogHistory.featureRegistry=フィーチャー
+gtb.contentLogHistory.texture=テクスチャ
+gtb.contentLogHistory.sound=サウンド
+gtb.contentLogHistory.animation=アニメーション
+gtb.contentLogHistory.geometry=ジオメトリ
+gtb.contentLogHistory.localization=ローカライズ
+gtb.contentLogHistory.structure=ストラクチャー
+gtb.contentLogHistory.rendering=レンダリング
+gtb.contentLogHistory.volumes=ボリューム
+gtb.contentLogHistory.json=JSON
+gtb.contentLogHistory.scripting=スクリプトAPI
+gtb.contentLogHistory.ui=JSON UI
+gtb.contentLogHistory.addon=その他
 
 
 
@@ -257,6 +282,9 @@ packinfo.faq.q9.a=A. アドオン制作依頼は受けてないです。
 
 packinfo.update.title=アップデート情報
 packinfo.update.text1=このページでは、 Gote-Supporter の更新情報を見ることができます。
+
+packinfo.v175.u1=ポーズ画面の一時メモボタンにツールチップを追加しました。
+packinfo.v175.u2=コンテンツログの履歴画面にフィルター機能を追加しました。 これを使うとログの種類(ブロックやAPIなど)で絞り込む事ができます!
 
 packinfo.v174.u1=タイトル画面のマイクラのバージョンの形式を「v1.XX.X」にしました。
 packinfo.v174.u2=マーケットプレイスでミスって購入することを防ぐため、有効トグルをONにしてから購入できるようにしました。

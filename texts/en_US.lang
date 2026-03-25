@@ -91,6 +91,32 @@ gtb.playercount.text1=§
 gtb.playercount.text2=§z Players Online
 gtb.playercount.text2.one=§z Player Online
 
+gtb.contentLogHistory.filter1=Displaying the log for '
+gtb.contentLogHistory.filter2='
+gtb.contentLogHistory.noFilter=No filter
+gtb.contentLogHistory.blocks=Blocks
+gtb.contentLogHistory.item=Item
+gtb.contentLogHistory.commands=Commands
+gtb.contentLogHistory.recipes=Recipes
+gtb.contentLogHistory.entity=Entity
+gtb.contentLogHistory.ai=AI
+gtb.contentLogHistory.actor=Actor
+gtb.contentLogHistory.molang=Molang
+gtb.contentLogHistory.effects=Particle
+gtb.contentLogHistory.biomeRegistry=Biome
+gtb.contentLogHistory.featureRegistry=Feature
+gtb.contentLogHistory.texture=Texture
+gtb.contentLogHistory.sound=Sound
+gtb.contentLogHistory.animation=Animation
+gtb.contentLogHistory.geometry=Geometry
+gtb.contentLogHistory.localization=Localization
+gtb.contentLogHistory.structure=Structure
+gtb.contentLogHistory.rendering=Rendering
+gtb.contentLogHistory.volumes=Volumes
+gtb.contentLogHistory.json=JSON
+gtb.contentLogHistory.scripting=ScriptAPI
+gtb.contentLogHistory.ui=JSON UI
+gtb.contentLogHistory.addon=Others
 
 ## Gote-Supporter Info 画面のテキスト
 
@@ -190,6 +216,9 @@ packinfo.faq.q9.a=As of June 2024, I am not accepting any requests to create add
 
 packinfo.update.title=Changelog
 packinfo.update.text1=On this page, you can see the changelog of Gote-Supporter.
+
+packinfo.v175.u1=A tooltip has been added to the Temporary Note button on the pause screen.
+packinfo.v175.u2=A filter function has been added to the content log history screen. You can use this to filter by log type (such as blocks or APIs)!
 
 packinfo.v174.u1=The Minecraft version format on the title screen has been changed to "v1.XX.X".
 packinfo.v174.u2=To prevent accidental purchases on the marketplace, we've enabled a requirement to turn the activation toggle ON before making a purchase.

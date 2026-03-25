@@ -1,0 +1,701 @@
+{
+  "namespace": "content_log_history",
+  
+  "filter_icon": {
+    "layer": 1,
+    "type": "image",
+    "texture": "textures/ui/store_filter_icon",
+    "size": [ 17, 17 ]
+  },
+ 
+  "main_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "main_stack_panel@content_log_history.main_stack_panel": {}
+      },
+      {
+        "filter_toggles@common.scrolling_panel": {
+          "size": [ 100, "100% - 27px" ],
+          "offset": [ 0, 27 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "layer": 334,
+          "$scrolling_content": "content_log_history.filter_toggles",
+          "$show_background": false,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "filter_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "main_stack_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "bottom_buttons": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", 27 ],
+          "controls": [
+            {
+              "clear_button@common_buttons.light_content_button": {
+                "size": [ 27, 27 ],
+                "$button_content": "content_log_history.clear_icon",
+                "$pressed_button_name": "button.clear"
+              }
+            },
+            {
+              "copy_button@common_buttons.light_content_button": {
+                "size": [ 27, 27 ],
+                "$button_content": "content_log_history.clipboard_icon",
+                "$pressed_button_name": "button.copy_to_clipboard"
+              }
+            },
+            {
+              "spacer": {
+                "type": "panel",
+                "size": [ "fill", 27 ],
+                "controls": [
+                  {
+                    "filter_info@content_log_history.filter_info": {}
+                  }
+                ]
+              }
+            },
+            {
+              "filter_button@common_toggles.light_content_toggle": {
+                "size": [ 27, 27 ],
+                "$button_content": "content_log_history.filter_icon",
+                "$toggle_name": "filter_toggle",
+                "$toggle_view_binding_name": "filter_toggle"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "messages_scrolling_panel@content_log_history.messages_scrolling_panel": {
+          "size": [ "100%", "fill" ]
+        }
+      }
+    ]
+  },
+    
+  "filter_toggle_item@common_toggles.dark_content_toggle": {
+    "size": [ "100%", 20 ],
+    "$radio_toggle_group": true,
+    "$button_text": "フィルターなし",
+    "$button_content": "content_log_history.filter_toggle_content",
+    "$toggle_name": "filter_select_toggle",
+    "$toggle_view_binding_name": "no_filter"
+  },
+
+  "filter_toggle_content": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100% - 4px", 10 ],
+    "layer": 1,
+    "controls": [
+      {
+        "checkbox_check": {
+          "type": "panel",
+          "size": [ 10, 10 ],
+          "controls": [
+            {
+              "checkbox_check": {
+                "type": "image",
+                "texture": "textures/ui/radio_on",
+                "visible": "($toggle_checked or $toggle_checked_hover)"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ 2, 0 ]
+        }
+      },
+      {
+        "label": {
+          "type": "label",
+          "size": [ "fill", 10 ],
+          "text": "$button_text"
+        }
+      }
+    ]
+  },
+
+  "filter_toggles": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "no_filter_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.noFilter",
+          "$toggle_default_state": true,
+          "$toggle_group_forced_index": 0,
+          "$toggle_view_binding_name": "no_filter"
+        }
+      },
+      {
+        "blocks_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.blocks",
+          "$toggle_group_forced_index": 1,
+          "$toggle_view_binding_name": "blocks_filter"
+        }
+      },
+      {
+        "item_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.item",
+          "$toggle_group_forced_index": 2,
+          "$toggle_view_binding_name": "item_filter"
+        }
+      },
+      {
+        "commands_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.commands",
+          "$toggle_group_forced_index": 3,
+          "$toggle_view_binding_name": "commands_filter"
+        }
+      },
+      {
+        "recipes_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.recipes",
+          "$toggle_group_forced_index": 4,
+          "$toggle_view_binding_name": "recipes_filter"
+        }
+      },
+      {
+        "entity_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.entity",
+          "$toggle_group_forced_index": 5,
+          "$toggle_view_binding_name": "entity_filter"
+        }
+      },
+      {
+        "ai_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.ai",
+          "$toggle_group_forced_index": 6,
+          "$toggle_view_binding_name": "ai_filter"
+        }
+      },
+      {
+        "actor_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.actor",
+          "$toggle_group_forced_index": 7,
+          "$toggle_view_binding_name": "actor_filter"
+        }
+      },
+      {
+        "molang_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.molang",
+          "$toggle_group_forced_index": 8,
+          "$toggle_view_binding_name": "molang_filter"
+        }
+      },
+      {
+        "effects_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.effects",
+          "$toggle_group_forced_index": 9,
+          "$toggle_view_binding_name": "effects_filter"
+        }
+      },
+      {
+        "biomeregistry_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.biomeRegistry",
+          "$toggle_group_forced_index": 10,
+          "$toggle_view_binding_name": "biomeregistry_filter"
+        }
+      },
+      {
+        "featureregistry_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.featureRegistry",
+          "$toggle_group_forced_index": 11,
+          "$toggle_view_binding_name": "featureregistry_filter"
+        }
+      },
+      {
+        "texture_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.texture",
+          "$toggle_group_forced_index": 12,
+          "$toggle_view_binding_name": "texture_filter"
+        }
+      },
+      {
+        "sound_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.sound",
+          "$toggle_group_forced_index": 13,
+          "$toggle_view_binding_name": "sound_filter"
+        }
+      },
+      {
+        "animation_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.animation",
+          "$toggle_group_forced_index": 14,
+          "$toggle_view_binding_name": "animation_filter"
+        }
+      },
+      {
+        "geometry_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.geometry",
+          "$toggle_group_forced_index": 15,
+          "$toggle_view_binding_name": "geometry_filter"
+        }
+      },
+      {
+        "localization_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.localization",
+          "$toggle_group_forced_index": 16,
+          "$toggle_view_binding_name": "localization_filter"
+        }
+      },
+      {
+        "structure_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.structure",
+          "$toggle_group_forced_index": 17,
+          "$toggle_view_binding_name": "structure_filter"
+        }
+      },
+      {
+        "rendering_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.rendering",
+          "$toggle_group_forced_index": 18,
+          "$toggle_view_binding_name": "rendering_filter"
+        }
+      },
+      {
+        "volumes_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.volumes",
+          "$toggle_group_forced_index": 19,
+          "$toggle_view_binding_name": "volumes_filter"
+        }
+      },
+      {
+        "json_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.json",
+          "$toggle_group_forced_index": 20,
+          "$toggle_view_binding_name": "json_filter"
+        }
+      },
+      {
+        "scripting_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.scripting",
+          "$toggle_group_forced_index": 21,
+          "$toggle_view_binding_name": "scripting_filter"
+        }
+      },
+      {
+        "ui_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.ui",
+          "$toggle_group_forced_index": 22,
+          "$toggle_view_binding_name": "ui_filter"
+        }
+      },
+      {
+        "addon_toggle@content_log_history.filter_toggle_item": {
+          "$button_text": "gtb.contentLogHistory.addon",
+          "$toggle_group_forced_index": 23,
+          "$toggle_view_binding_name": "addon_filter"
+        }
+      }
+    ]
+  },
+  
+  "filtered_log@content_log_history.content_log_message": {
+    "$filter|default": "[Localization]",
+    "$visible_toggle|default": "no_filter",
+    "bindings": [
+      {
+        "binding_type": "collection",
+        "binding_name": "#content_log_text",
+        "binding_name_override": "#text",
+        "binding_collection_name": "content_log_message"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "$visible_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#ts"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#ts and (not ((#text - $filter) = #text)))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "content_log_message_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "content_log_message@content_log_history.content_log_message": {
+          "bindings": [
+            {
+              "binding_type": "collection",
+              "binding_name": "#content_log_text",
+              "binding_name_override": "#text",
+              "binding_collection_name": "content_log_message"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "no_filter",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "blocks_log@content_log_history.filtered_log": {
+          "$filter": "[Blocks]",
+          "$visible_toggle": "blocks_filter"
+        }
+      },
+      {
+        "item_log@content_log_history.filtered_log": {
+          "$filter": "[Item]",
+          "$visible_toggle": "item_filter"
+        }
+      },
+      {
+        "commands_log@content_log_history.filtered_log": {
+          "$filter": "[Commands]",
+          "$visible_toggle": "commands_filter"
+        }
+      },
+      {
+        "recipes_log@content_log_history.filtered_log": {
+          "$filter": "[Recipes]",
+          "$visible_toggle": "recipes_filter"
+        }
+      },
+      {
+        "entity_log@content_log_history.filtered_log": {
+          "$filter": "[Entity]",
+          "$visible_toggle": "entity_filter"
+        }
+      },
+      {
+        "ai_log@content_log_history.filtered_log": {
+          "$filter": "[AI]",
+          "$visible_toggle": "ai_filter"
+        }
+      },
+      {
+        "actor_log@content_log_history.filtered_log": {
+          "$filter": "[Actor]",
+          "$visible_toggle": "actor_filter"
+        }
+      },
+      {
+        "molang_log@content_log_history.filtered_log": {
+          "$filter": "[Molang]",
+          "$visible_toggle": "molang_filter"
+        }
+      },
+      {
+        "effects_log@content_log_history.filtered_log": {
+          "$filter": "[Effects]",
+          "$visible_toggle": "effects_filter"
+        }
+      },
+      {
+        "biomeregistry_log@content_log_history.filtered_log": {
+          "$filter": "[BiomeRegistry]",
+          "$visible_toggle": "biomeregistry_filter"
+        }
+      },
+      {
+        "featureregistry_log@content_log_history.filtered_log": {
+          "$filter": "[FeatureRegistry]",
+          "$visible_toggle": "featureregistry_filter"
+        }
+      },
+      {
+        "texture_log@content_log_history.filtered_log": {
+          "$filter": "[Texture]",
+          "$visible_toggle": "texture_filter"
+        }
+      },
+      {
+        "sound_log@content_log_history.filtered_log": {
+          "$filter": "[Sound]",
+          "$visible_toggle": "sound_filter"
+        }
+      },
+      {
+        "animation_log@content_log_history.filtered_log": {
+          "$filter": "[Animation]",
+          "$visible_toggle": "animation_filter"
+        }
+      },
+      {
+        "geometry_log@content_log_history.filtered_log": {
+          "$filter": "[Geometry]",
+          "$visible_toggle": "geometry_filter"
+        }
+      },
+      {
+        "localization_log@content_log_history.filtered_log": {
+          "$filter": "[Localization]",
+          "$visible_toggle": "localization_filter"
+        }
+      },
+      {
+        "structure_log@content_log_history.filtered_log": {
+          "$filter": "[Structure]",
+          "$visible_toggle": "structure_filter"
+        }
+      },
+      {
+        "rendering_log@content_log_history.filtered_log": {
+          "$filter": "[Rendering]",
+          "$visible_toggle": "renderingfilter"
+        }
+      },
+      {
+        "volumes_log@content_log_history.filtered_log": {
+          "$filter": "[Volumes]",
+          "$visible_toggle": "volumes_filter"
+        }
+      },
+      {
+        "json_log@content_log_history.filtered_log": {
+          "$filter": "[Json]",
+          "$visible_toggle": "json_filter"
+        }
+      },
+      {
+        "scripting_log@content_log_history.filtered_log": {
+          "$filter": "[Scripting]",
+          "$visible_toggle": "scripting_filter"
+        }
+      },
+      {
+        "ui_log@content_log_history.filtered_log": {
+          "$filter": "[UI]",
+          "$visible_toggle": "ui_filter"
+        }
+      },
+      {
+        "addon_log@content_log_history.filtered_log": {
+          "$filter": "[Addon]",
+          "$visible_toggle": "addon_filter"
+        }
+      }
+    ]
+  },
+
+  "filter_info_label": {
+    "type": "label",
+    "size": [ "100%", 10 ],
+    "$text|default": "gtb.contentLogHistory.blocks",
+    "$visible_toggle|default": "no_filter",
+    "text": "('%gtb.contentLogHistory.filter1 %' + $text + ' %gtb.contentLogHistory.filter2')",
+    "color": "$6_color_format",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$visible_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "filter_info": {
+    "type": "panel",
+    "size": [ "100% - 6px", 10 ],
+    "controls": [
+      {
+        "blocks_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.blocks",
+          "$visible_toggle": "blocks_filter"
+        }
+      },
+      {
+        "item_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.item",
+          "$visible_toggle": "item_filter"
+        }
+      },
+      {
+        "commands_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.commands",
+          "$visible_toggle": "commands_filter"
+        }
+      },
+      {
+        "recipes_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.recipes",
+          "$visible_toggle": "recipes_filter"
+        }
+      },
+      {
+        "entity_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.entity",
+          "$visible_toggle": "entity_filter"
+        }
+      },
+      {
+        "ai_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.ai",
+          "$visible_toggle": "ai_filter"
+        }
+      },
+      {
+        "actor_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.actor",
+          "$visible_toggle": "actor_filter"
+        }
+      },
+      {
+        "molang_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.molang",
+          "$visible_toggle": "molang_filter"
+        }
+      },
+      {
+        "effects_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.effects",
+          "$visible_toggle": "effects_filter"
+        }
+      },
+      {
+        "biomeregistry_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.biomeRegistry",
+          "$visible_toggle": "biomeregistry_filter"
+        }
+      },
+      {
+        "featureregistry_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.featureRegistry",
+          "$visible_toggle": "featureregistry_filter"
+        }
+      },
+      {
+        "texture_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.texture",
+          "$visible_toggle": "texture_filter"
+        }
+      },
+      {
+        "sound_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.sound",
+          "$visible_toggle": "sound_filter"
+        }
+      },
+      {
+        "animation_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.animation",
+          "$visible_toggle": "animation_filter"
+        }
+      },
+      {
+        "geometry_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.geometry",
+          "$visible_toggle": "geometry_filter"
+        }
+      },
+      {
+        "localization_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.localization",
+          "$visible_toggle": "localization_filter"
+        }
+      },
+      {
+        "structure_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.structure",
+          "$visible_toggle": "structure_filter"
+        }
+      },
+      {
+        "rendering_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.rendering",
+          "$visible_toggle": "rendering_filter"
+        }
+      },
+      {
+        "volumes_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.volumes",
+          "$visible_toggle": "volumes_filter"
+        }
+      },
+      {
+        "json_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.json",
+          "$visible_toggle": "json_filter"
+        }
+      },
+      {
+        "scripting_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.scripting",
+          "$visible_toggle": "scripting_filter"
+        }
+      },
+      {
+        "ui_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.ui",
+          "$visible_toggle": "ui_filter"
+        }
+      },
+      {
+        "addon_log@content_log_history.filter_info_label": {
+          "$text": "gtb.contentLogHistory.addon",
+          "$visible_toggle": "addon_filter"
+        }
+      }
+    ]
+  },
+
+  "root_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "root_panel@common.fullscreen_header": {
+          "$back_button_has_title": true,
+          "$button_text": "contentlog.history.title",
+          "$child_control": "content_log_history.main_panel",
+          "layer": 10
+        }
+      }
+    ]
+  },
+
+  "black": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/ui/White",
+    "color": [ 0.0, 0.0, 0.0 ],
+    "alpha": 0.7
+  },
+
+  "content_log_history_screen@common.base_screen": {
+    "$screen_content": "content_log_history.root_panel",
+    "$screen_bg_content": "content_log_history.black",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      }
+    ]
+  }
+}

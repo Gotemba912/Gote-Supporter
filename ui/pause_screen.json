@@ -527,7 +527,7 @@
               "type": "panel",
               "size": [ "100%c + 4px", 32 ],
               "controls": [
-                { "note_button_dialog@pause.note_button_dialog": {} }
+                { "note_button_dialog_with_tooltip@pause.note_button_dialog_with_tooltip": {} }
               ]
             }
           },
@@ -622,6 +622,15 @@
     "$button_content": "pause.book_and_quil",
     "$toggle_tts_name": "gtb.memoScreen.title",
     "$toggle_group_forced_index": 100
+  },
+
+  "note_button_dialog_with_tooltip": {
+    "type": "panel",
+    "size": [ 24, 24 ],
+    "controls": [
+      { "button@pause.note_button_dialog": {} },
+      { "tooltip_trigger@pause.icon_button_tooltip_trigger": { "$tooltip_text": "gtb.memoScreen.title" } }
+    ]
   },
 
   "memo_screen@common_dialogs.main_panel_no_buttons": {
