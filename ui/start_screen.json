@@ -466,7 +466,7 @@
     "size": [ "100%", 10 ],
     "controls": [
       {
-        "gote-supporter_version": {
+        "gote-supporter_copyright": {
           "type": "label",
           "color": "$main_header_text_color",
           "anchor_from": "top_left",
@@ -483,7 +483,7 @@
         }
       },
       {
-        "minecraft_version": {
+        "minecraft_copyright": {
           "type": "label",
           "color": "$main_header_text_color",
           "anchor_from": "top_left",
@@ -545,8 +545,21 @@
               "binding_name": "#development_version"
             },
             {
+              "ignored": "$version_lower",
               "binding_type": "view",
               "source_property_name": "('v1.' + (('§z' + #version) - 'v'))",
+              "target_property_name": "#fixed_version"
+            },
+            {
+              "ignored": "(not $version_lower)",
+              "binding_type": "view",
+              "source_property_name": "((('%.3s' * #version) - 'v') - 10)",
+              "target_property_name": "#mejar"
+            },
+            {
+              "ignored": "(not $version_lower)",
+              "binding_type": "view",
+              "source_property_name": "('v1.' + #mejar + '.' + (#version - ('%.4s' * #version)))",
               "target_property_name": "#fixed_version"
             },
             {

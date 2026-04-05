@@ -29,6 +29,51 @@
     }
   },
 
+  "hud_player_renderer": {
+    "ignored": "$show_hotbar_paperdoll"
+  },
+
+  "hotbar_player_renderer": {
+    "type": "panel",
+    "size": [ 62, 60 ],
+    "layer": 2,
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ -117, 0 ],
+    "ignored": "(not $show_hotbar_paperdoll)",
+    "controls": [
+      {
+        "player_renderer_panel": {
+          "type": "panel",
+          "size": [ 30, 30 ],
+          "offset": [ 0, -18 ],
+
+          "controls": [
+            {
+              "player_renderer": {
+                "type": "custom",
+                "renderer": "live_player_renderer",
+                "property_bag": {
+                  "#look_at_cursor": false
+                },
+                "animation_reset_name": "screen_animation_reset",
+                "anims": [
+                  "@common.screen_exit_size_animation_push",
+                  "@common.screen_exit_size_animation_pop",
+                  "@common.screen_entrance_size_animation_push",
+                  "@common.screen_entrance_size_animation_pop"
+                ],
+                "layer": 8,
+                "anchor_from": "center",
+                "anchor_to": "center"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
   "clock_compass": {
     "type": "stack_panel",
     "$size": [ 30, 60 ],
@@ -527,7 +572,8 @@
         "array_name": "controls",
         "operation": "insert_front",
         "value": [
-          { "clock_compass@hud.clock_compass": {} }
+          { "clock_compass@hud.clock_compass": {} },
+          { "hotbar_player_renderer@hud.hotbar_player_renderer": {} }
         ]
       }
     ]

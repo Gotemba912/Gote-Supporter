@@ -32,8 +32,10 @@ https://github.com/Gotemba912/Gote-Supporter/wiki/Config(English)
   "$chest_screen_paperdoll|default": true,
   "$show_hotbar_navigator|default": false,
   "$show_hotbar_number|default": false,
+  "$show_hotbar_paperdoll|default": true,
   "$show_gote_version|default": true,
   "$show_build_number|default": false,
+  "$version_lower|default": false,
   "$play_screen_doubleclick|default": false,
   "$play_default_tab|default": "worlds",
   "$show_recoverycompass|default": false,
@@ -50,7 +52,7 @@ https://github.com/Gotemba912/Gote-Supporter/wiki/Config(English)
   
   //これらの設定は変更しないようお願いします!!
   //Please do not change these settings!
-  "$gote_ver": "1.7.5",
+  "$gote_ver": "1.7.6",
   "$gote_supporter_enabled": true,
   "$is_goteserver|default": false, 
   "$revival_for_2023|default": false,

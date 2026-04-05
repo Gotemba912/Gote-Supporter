@@ -588,6 +588,176 @@
     ]
   },
 
+  "language_daitai_button_content": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100% - 6px", 15 ],
+    "controls": [
+      {
+        "advanced_graphics_options_label@common.minecraftTenLabel": {
+          "size": [ "default", 10 ],
+          "max_size": [ "75%", 10 ],
+          "text": "options.language",
+          "color": "$text_color"
+        }
+      },
+      {
+        "fill_pad": {
+          "type": "panel",
+          "size": [ "fill", "100%" ]
+        }
+      },
+      {
+        "plus_panel": {
+          "type": "panel",
+          "size": [ "100%c", "100%" ],
+          "controls": [
+            {
+              "plus@resource_packs.plus_image": {
+                "size": [ 10, 10 ],
+                "offset": [ -2, 0 ],
+                "color": "$text_color"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "(not #advanced_graphics_options_grid_visible)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "minus_panel": {
+          "type": "panel",
+          "size": [ "100%c", "100%" ],
+          "controls": [
+            {
+              "minus@resource_packs.minus_image": {
+                "size": [ 10, 10 ],
+                "offset": [ -2, 0 ],
+                "color": "$text_color"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#advanced_graphics_options_grid_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "creator_section": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "gote_supporter_settings": {
+              "type": "stack_panel",
+              "size": [ "100%", "100%c + 10px" ],
+              "ignored": "(not $base_fullscreen)",
+              "controls": [
+                {
+                  "heading": {
+                    "type": "label",
+                    "text": "Gote-Supporter %menu.options",
+                    "color": "$body_text_color"
+                  }
+                },
+                {
+                  "spacer_1": {
+                    "type": "panel",
+                    "size": [ "100%", 7 ]
+                  }
+                },
+                {
+                  "vsync_dropdown@settings_common.option_dropdown": {
+                    "$option_label": "options.vsync",
+                    "$dropdown_content": "general_section.vysnc_dropdown_content",
+                    "$dropdown_area": "content_area",
+                    "$dropdown_name": "vsync_dropdown",
+                    "$options_dropdown_toggle_label_binding": "#vsync_dropdown_toggle_label",
+                    "$option_enabled_binding_name": "#vsync_dropdown_enabled",
+                    "$dropdown_scroll_content_size": [ "100%", "200%" ]
+                  }
+                },
+                {
+                  "language_daitai_button@common_buttons.light_content_button": {
+                    "size": [ "100%", 20 ],
+                    "$button_content": "general_section.language_daitai_button_content",
+                    "$pressed_button_name": "button.expand_advanced_graphics",
+                    "bindings": [
+                      {
+                        "binding_name": "#advanced_graphics_options_button_visible",
+                        "binding_name_override": "#visible"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "spacer_2": {
+                    "type": "panel",
+                    "size": [ "100%", 5 ]
+                  }
+                },
+                {
+                  "language_section@general_section.language_section": {
+                    "bindings": [
+                      {
+                        "binding_name": "#advanced_graphics_options_grid_visible",
+                        "binding_name_override": "#visible"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "spacer_2": {
+                    "type": "panel",
+                    "size": [ "100%", 7 ]
+                  }
+                },
+                {
+                  "config_button@gtb.swtich_toggle": {
+                    "size": [ "100%", 25 ],
+                    "$button_text": "Gote-Supporter Config",
+                    "$toggle_name": "config",
+                    "$toggle_view_binding_name": "config_toggle",
+                    "$toggle_group_forced_index": 100
+                  }
+                },
+                {
+                  "section_panel_1": {
+                    "type": "panel",
+                    "size": [ "100%", "100%c + 14px" ],
+                    "controls": [
+                      {
+                        "section_divider": {
+                          "type": "image",
+                          "size": [ "100% - 30px", 1 ],
+                          "anchor_from": "center",
+                          "anchor_to": "center",
+                          "layer": 3,
+                          "texture": "textures/ui/list_item_divider_line_light"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
   "banner_message": {
     "type": "stack_panel",
     "size": [ "100%", "100%c + 5px" ],
@@ -603,7 +773,8 @@
               "message": {
                 "type": "label",
                 "size": [ "100% - 6px", "default" ],
-                "text": "$message"
+                "text": "$message",
+                "layer": 1
               }
             }
           ]
@@ -649,6 +820,15 @@
             }
           ]
         }
+      }
+    ]
+  },
+
+  "content_log_panel/content_log_buttons/open_content_log_history": {
+    "variables": [
+      {
+        "requires": "$mouse",
+        "$button_text": "%contentlog.history.title (Ctrl+H)"
       }
     ]
   },

@@ -1,7 +1,4 @@
-﻿pack.name=ごてサポーター v1.4.7
-pack.description=マイライフをより豊かにできるユーザー補助ツールです!   Created by Yuka0745
-pack.name.nover=§l§aごて§bサポーター
-
+﻿
 map.position=位置 §bX:%s§r, §aY:%s§r, §cZ:%s§r	#
 
 chat.newline=改行テキスト
@@ -68,7 +65,6 @@ disconnectionScreen.notAllowed.reason2=ホストがワールドを開き直さ�
 xbox.disconectionscreen.accessDenied.reason=ホストがあなたをブロックした可能性があります。
 
 
-options.copyCoordinateUI=座標ユーティリティを有効化
 
 chat.coordinateTypePosition=現在位置
 chat.coordinateTypeFacing=ブロック
@@ -88,14 +84,19 @@ craftingScreen.tab.none=不明のタブ
 options.quick=クイック
 options.quickTitle=クイック設定
 
-options.creator.deviceInfoMemoryTier=メモリ数
+options.copyCoordinateUI=座標ユーティリティを有効化
+options.screenShake=/camerashake が有効	#
+
 options.creator.deviceInfoMemoryTier.undetermined=不明
-options.creator.deviceInfoMemoryTier.superLow=ざこ (〜1.5GB)
-options.creator.deviceInfoMemoryTier.low=よわい (2GB)
-options.creator.deviceInfoMemoryTier.mid=ふつう (4GB)
-options.creator.deviceInfoMemoryTier.high=まあまあ (8GB)
-options.creator.deviceInfoMemoryTier.superHigh=つよい (16GB〜)
-options.creator.deviceInfoUseMemoryTierOverride=メモリ数を詐欺る
+options.creator.deviceInfoMemoryTier.superLow=最低 (〜1.5GB)
+options.creator.deviceInfoMemoryTier.low=低 (2GB)
+options.creator.deviceInfoMemoryTier.mid=中 (4GB)
+options.creator.deviceInfoMemoryTier.high=高 (8GB)
+options.creator.deviceInfoMemoryTier.superHigh=最高 (16GB〜)
+options.content_log_gui.level.verbose=詳細 (console.log)
+options.content_log_gui.level.info=情報 (console.info)
+options.content_log_gui.level.warn=警告 (console.warn)
+options.content_log_gui.level.error=エラー (console.error)
 options.gote.label1=ここではGote-SupporterのConfigを確認することができます。
 options.gote.label2=ここからGote-Supporterの設定を変更することはできません。
 options.gote.label3=設定は以下のファイルで変更できます!
@@ -107,6 +108,7 @@ options.gote.hud_compass=HUDにコンパスと時計を表示
 options.gote.show_recoverycompass=HUDのコンパスにリカバリーコンパスを追加(ベータ!)
 options.gote.f1_f8_location=HUDのF1/F8ボタンの位置(タッチ)
 options.gote.show_hotbar_navigator=HUDのホットバーナビゲーターの表示(タッチ)
+options.gote.show_hotbar_paperdoll=ホットバーの横に人形表示する
 options.gote.chat_tab_button_type=チャット画面のTabキーの配置
 options.gote.playerlist_key=HUDのプレイヤーリストのキー
 options.gote.play_screen_doubleclick=旧プレイ画面のワールドのボタンをダブルクリックしないと入れないようにする
@@ -282,6 +284,14 @@ packinfo.faq.q9.a=A. アドオン制作依頼は受けてないです。
 
 packinfo.update.title=アップデート情報
 packinfo.update.text1=このページでは、 Gote-Supporter の更新情報を見ることができます。
+
+packinfo.v176.u1=新設定画面でVSyncの設定ができるようになりました。設定の「クリエイター」を開くと、一番上にVSync設定があります。
+packinfo.v176.u2=新設定画面で言語設定をワールド・サーバー内で変えれるようになりました。設定の「クリエイター」を開くと、上に「言語」とあるので、それを押すと設定できます。
+packinfo.v176.u3=新設定画面でGote-Supporter Config設定を確認できるようになりました。 設定の「クリエイター」を開くと、上に「Gote-Supporter Config」があるので、それを押すと確認できます。
+packinfo.v176.u4=上の3つは今後のアプデでできなくなる可能性がありますので、ご了承下さい……。
+packinfo.v176.u5=ホットバーの左に人形表示ができるようになりました。Configを使うことで有効化できます。
+packinfo.v176.u6=一部テキスト表記を直しました。
+packinfo.v176.u7=設定のストレージ欄の「その他のコンテンツ」の各ボタンの文字がおかしかったバグを直しました。
 
 packinfo.v175.u1=ポーズ画面の一時メモボタンにツールチップを追加しました。
 packinfo.v175.u2=コンテンツログの履歴画面にフィルター機能を追加しました。 これを使うとログの種類(ブロックやAPIなど)で絞り込む事ができます!

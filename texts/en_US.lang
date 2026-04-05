@@ -1,7 +1,4 @@
-﻿pack.name=Gote-Supporter v1.4.7
-pack.description=You can conveniently enjoy your Minecraft life.   Created by Yuka0745
-packname.nover=§l§aGote§d-§bSupporter
-
+﻿
 
 map.position=Position §bX:%s§r, §aY:%s§r, §cZ:%s§r	#
 
@@ -44,6 +41,7 @@ options.gote.hud_compass=Display compass and clock on HUD
 options.gote.show_recoverycompass=Add recovery compass to HUD compass (beta!)
 options.gote.f1_f8_location=Location of F1/F8 buttons on HUD (Touch) §c(Unstable)
 options.gote.show_hotbar_navigator=Show HUD hotbar navigator (touch)
+options.gote.show_hotbar_paperdoll=Display the paper doll to the left of the hotbar
 options.gote.chat_tab_button_type=Placement of the Tab key on the Chat Screen
 options.gote.playerlist_key=HUD player list key
 options.gote.play_screen_doubleclick=Make it so that you have to double click on the world button on the play screen to enter.
@@ -215,7 +213,15 @@ packinfo.faq.q9.a=As of June 2024, I am not accepting any requests to create add
 ## アップデート情報
 
 packinfo.update.title=Changelog
-packinfo.update.text1=On this page, you can see the changelog of Gote-Supporter.
+packinfo.update.text1=On this page, you can see the changelog of Gote-Supporter.~LINEBREAK~§7The change log has been automatically translated from Japanese to English using translation software, so there may be some parts that don't make sense.
+
+packinfo.v176.u1=You can now configure VSync settings in the new settings screen. Open the "Creator" section in the settings, and you'll find the VSync settings at the top.
+packinfo.v176.u2=You can now change the language settings within a world or server via the new settings screen. Open "Creator" in the settings menu, and you'll see "Language" at the top; tap it to adjust the settings.
+packinfo.v176.u2=You can now view the Gote-Supporter Config settings in the new settings screen. Open the "Creator" section of the settings, and you'll see "Gote-Supporter Config" at the top; tap it to view the settings.
+packinfo.v176.u3=Please note that the three items listed above may no longer be available in future updates.
+packinfo.v176.u4=You can now display a character sprite to the left of the hotbar. You can enable this using the Config.
+packinfo.v176.u5=Corrected some text (Japanese)
+packinfo.v176.u6=Fixed a bug where the text on the buttons under "Other Content" in the Storage section of Settings was displaying incorrectly.
 
 packinfo.v175.u1=A tooltip has been added to the Temporary Note button on the pause screen.
 packinfo.v175.u2=A filter function has been added to the content log history screen. You can use this to filter by log type (such as blocks or APIs)!

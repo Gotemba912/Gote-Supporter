@@ -66,6 +66,7 @@
     ]
   },
 
+
   "selector_stack_panel/controls_and_settings_selector_pane/touch_button": {
     "ignored": "($is_holographic or not $touch_supported)"
   },

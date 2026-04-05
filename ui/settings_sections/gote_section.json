@@ -317,6 +317,15 @@
         }
       },
       {
+        "show_hotbar_paperdoll@settings_common.option_toggle": {
+          "$option_label": "options.gote.show_hotbar_paperdoll",
+          "$option_binding_name": "#dummy",
+          "$toggle_default_state": "$show_hotbar_paperdoll",
+          "$toggle_name": "show_hotbar_paperdoll",
+          "enabled": false
+        }
+      },
+      {
         "play_screen_doubleclick@settings_common.option_toggle": {
           "$option_label": "options.gote.play_screen_doubleclick",
           "$option_binding_name": "#dummy",

@@ -122,8 +122,7 @@
                         "clear_cache_button@common_buttons.dark_text_button": {
                           "size": [ "100%", 25 ],
                           "$pressed_button_name": "button.clear_cache",
-                          "$clear_cache_button_text|default": "#none",
-                          "$button_text": "$clear_cache_button_text"
+                          "$button_text": "options.dev_clearStoreCache"
                         }
                       },
                       {
@@ -131,8 +130,7 @@
                           "size": [ "100%", 25 ],
                           "ignored": "$education_edition",
                           "$pressed_button_name": "button.clear_screenshots_cache",
-                          "$clear_screenshots_cache_button_text|default": "#none",
-                          "$button_text": "$clear_screenshots_cache_button_text",
+                          "$button_text": "options.dev_clearScreenshotsCache",
                           "bindings": [
                             {
                               "binding_name": "#screenshots_showcase_enabled",
@@ -146,8 +144,7 @@
                           "size": [ "100%", 25 ],
                           "ignored": "$education_edition",
                           "$pressed_button_name": "button.delete_local_screenshots",
-                          "$delete_local_screenshots_button_text|default": "#none",
-                          "$button_text": "$delete_local_screenshots_button_text",
+                          "$button_text": "options.dev_deleteLocalScreenshots",
                           "bindings": [
                             {
                               "binding_name": "#screenshots_gallery_enabled",

@@ -1,0 +1,121 @@
+{
+  "namespace": "settings_common",
+
+  "screen_base": {
+    "$base_fullscreen|default": false
+  },
+
+  "screen_base_fullscreen": {
+    "$base_fullscreen": true
+  },
+  
+  "gote_supporter_config@common_dialogs.main_panel_no_buttons": {
+    "layer": 503,
+    "size": [ "80%", "80%" ],
+    "$text_name": "Gote-Supporter Config",
+    "$show_close_button": false,
+    "$child_control": "settings_common.gote_supporter_config_content"
+  },
+
+  "gote_supporter_config_content": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "scroll@common.scrolling_panel": {
+          "size": [ "100% - 4px", "100% - 4px" ],
+          "$scrolling_panel_size": [ "100% - 2px", "100%" ],
+          "$scroll_size": [ "4px", "100% - 2px" ],
+          "$show_background": false,
+          "$scrolling_content": "settings_common.config_section"
+        }
+      },
+      {
+        "config_close_button@gtb.close_button": {
+          "layer": 504,
+          "$toggle_name": "config"
+        }
+      }
+    ]
+  },
+
+  "config_section@gote_section.config_section": {
+    "bindings": []
+  },
+
+  "dialog_content_fullscreen": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      { "dialog_titles@settings_common.dialog_titles": {} },
+      {
+        "main": {
+          "type": "panel",
+          "size": [ "100%", "100%" ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "config_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "selector_area@settings_common.selector_area_no_scroll": {
+                "size": [ "0px", "100% - 19px" ]
+              }
+            },
+            {
+              "content_area@settings_common.content_area": {
+                "size": [ "80%", "100% - 19px" ],
+                "offset": [ "-10%", "21px" ]
+              }
+            },
+            {
+              "section_divider@settings_common.section_divider": {
+                "visible": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "config_screen": {
+          "type": "panel",
+          "visible": false,
+          "size": [ "100%", "100%" ],
+          "controls": [
+            {
+              "screen_background@common.screen_background": {
+                "layer": 500,
+                "size": [ "200%", "200%" ]
+              }
+            },
+            {
+              "config_esc_close@gtb.close_swtich_toggle_esc": {
+                "layer": 502,
+                "size": [ "100%", "100%" ],
+                "$toggle_name": "config",
+                "$toggle_default_state": true,
+                "$toggle_group_forced_index": 0
+              }
+            },
+            {
+              "gote_supporter_config@settings_common.gote_supporter_config": {}
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "config_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
