@@ -836,6 +836,16 @@
       }
     ]
   },
+  "pvp2.bounce": {
+    "category": "ui",
+    "sounds": [
+      {
+        "name": "sounds/music/game/records/bounce",
+        "stream": true,
+        "volume": 1.0
+      }
+    ]
+  },
 
   //water
   

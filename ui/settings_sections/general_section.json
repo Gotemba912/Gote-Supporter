@@ -422,7 +422,7 @@
   },
 
 
-  "account_section/account_info_buttom": {
+  "account_section/account_info_button": {
     "ignored": true
   },
 
@@ -459,17 +459,32 @@
               ],
               "controls": [
                 {
-                  "account_info_label": {
-                    "type": "label",
-                    "size": [ "100%", "default" ],
-                    "color": "$body_text_color",
-                    "offset": [ 2, 0 ],
+                  "account_info_button": {
+                    "type": "button",
+                    "size": [ "100%c", "100%c" ],
                     "anchor_from": "top_left",
                     "anchor_to": "top_left",
-                    "text": "#account_info",
-                    "bindings": [
+                    "offset": [ 2, 0 ],
+                    "button_mappings": [
                       {
-                        "binding_name": "#account_info"
+                        "from_button_id": "button.menu_select",
+                        "to_button_id": "button.copy_account_info",
+                        "mapping_type": "pressed"
+                      }
+                    ],
+                    "controls": [
+                      {
+                        "account_info_label": {
+                          "type": "label",
+                          "color": "$body_text_color",
+                          "size": [ "default", "default" ],
+                          "text": "#account_info",
+                          "bindings": [
+                            {
+                              "binding_name": "#account_info"
+                            }
+                          ]
+                        }
                       }
                     ]
                   }
@@ -718,7 +733,7 @@
                   }
                 },
                 {
-                  "spacer_2": {
+                  "spacer_3": {
                     "type": "panel",
                     "size": [ "100%", 7 ]
                   }
@@ -1344,7 +1359,8 @@
                   {"m_creator_musicbox@general_section.play_sound_panel":{"$sound_name":"item.record_creator_music_box.desc","$sound_id":"pvp2.creator_music_box","$sound_vol":1.0,"$is_music":true}},
                   {"m_precipice@general_section.play_sound_panel":{"$sound_name":"item.record_precipice.desc","$sound_id":"pvp2.precipice","$sound_vol":1.0,"$is_music":true}},
                   {"m_tears@general_section.play_sound_panel":{"$sound_name":"item.record_tears.desc","$sound_id":"pvp2.tears","$sound_vol":1.0,"$is_music":true}},
-                  {"m_lava_chicken@general_section.play_sound_panel":{"$sound_name":"item.record_lava_chicken.desc","$sound_id":"pvp2.lava_chicken","$sound_vol":1.0,"$is_music":true}}
+                  {"m_lava_chicken@general_section.play_sound_panel":{"$sound_name":"item.record_lava_chicken.desc","$sound_id":"pvp2.lava_chicken","$sound_vol":1.0,"$is_music":true}},
+                  {"m_bounce@general_section.play_sound_panel":{"$sound_name":"item.record_bounce.desc","$sound_id":"pvp2.bounce","$sound_vol":1.0,"$is_music":true}}
                 ]
               }
             }

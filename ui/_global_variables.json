@@ -32,7 +32,7 @@ https://github.com/Gotemba912/Gote-Supporter/wiki/Config(English)
   "$chest_screen_paperdoll|default": true,
   "$show_hotbar_navigator|default": false,
   "$show_hotbar_number|default": false,
-  "$show_hotbar_paperdoll|default": true,
+  "$show_hotbar_paperdoll|default": false,
   "$show_gote_version|default": true,
   "$show_build_number|default": false,
   "$version_lower|default": false,

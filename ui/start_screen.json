@@ -592,7 +592,19 @@
   },
 
   "text_panel": {
-    "ignored": true
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "offset": [ 0, 0 ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+      {
+        "buttons_panel@start.buttons_panel": {}
+      },
+      {
+        "text_panel_custom@start.text_panel_custom": {}
+      }
+    ]
   },
 
   "text_panel_custom": {
@@ -621,23 +633,6 @@
         "version_gote@start.version_gote": {
           "ignored": "(not $show_gote_version)"
         }
-      }
-    ]
-  },
-
-  "start_screen_content": {
-    "modifications": [
-      {
-        "array_name": "controls",
-        "operation": "insert_back",
-        "value": [
-          {
-            "buttons_panel@start.buttons_panel": {}
-          },
-          {
-            "text_panel_custom@start.text_panel_custom": {}
-          }
-        ]
       }
     ]
   }

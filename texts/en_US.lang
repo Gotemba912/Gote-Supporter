@@ -215,6 +215,12 @@ packinfo.faq.q9.a=As of June 2024, I am not accepting any requests to create add
 packinfo.update.title=Changelog
 packinfo.update.text1=On this page, you can see the changelog of Gote-Supporter.~LINEBREAK~§7The change log has been automatically translated from Japanese to English using translation software, so there may be some parts that don't make sense.
 
+packinfo.v177.u1=Support for Minecraft v1.26.4x.
+packinfo.v177.u2=Added "Bounce" to Music Listen.
+packinfo.v177.u3=Fixed a bug where the button and version information were not displayed in the top-left corner of the home screen.
+packinfo.v177.u4=Fixed an error that appeared when activating a resource pack.
+packinfo.v177.u5=Fixed a bug that prevented users from copying the MCID and DID in the settings screen
+
 packinfo.v176.u1=You can now configure VSync settings in the new settings screen. Open the "Creator" section in the settings, and you'll find the VSync settings at the top.
 packinfo.v176.u2=You can now change the language settings within a world or server via the new settings screen. Open "Creator" in the settings menu, and you'll see "Language" at the top; tap it to adjust the settings.
 packinfo.v176.u2=You can now view the Gote-Supporter Config settings in the new settings screen. Open the "Creator" section of the settings, and you'll see "Gote-Supporter Config" at the top; tap it to view the settings.

@@ -285,6 +285,12 @@ packinfo.faq.q9.a=A. アドオン制作依頼は受けてないです。
 packinfo.update.title=アップデート情報
 packinfo.update.text1=このページでは、 Gote-Supporter の更新情報を見ることができます。
 
+packinfo.v177.u1=Minecraft v1.26.4Xに対応しました。
+packinfo.v177.u2=サウンド鑑賞場に「Bounce」を追加しました。
+packinfo.v177.u3=タイトル画面で左上のボタンやバージョンが消えるバグを直しました。
+packinfo.v177.u4=リソースパックを適用するときにエラーが出てくるバグを直しました。
+packinfo.v177.u5=設定のアカウントでMCIDとDIDをコピーできないバグを直しました。
+
 packinfo.v176.u1=新設定画面でVSyncの設定ができるようになりました。設定の「クリエイター」を開くと、一番上にVSync設定があります。
 packinfo.v176.u2=新設定画面で言語設定をワールド・サーバー内で変えれるようになりました。設定の「クリエイター」を開くと、上に「言語」とあるので、それを押すと設定できます。
 packinfo.v176.u3=新設定画面でGote-Supporter Config設定を確認できるようになりました。 設定の「クリエイター」を開くと、上に「Gote-Supporter Config」があるので、それを押すと確認できます。
